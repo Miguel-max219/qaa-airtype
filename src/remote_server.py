@@ -246,6 +246,26 @@ def get_all_ips():
         ips.remove(main_ip)
     ips.insert(0, main_ip)
 
+    # 将虚拟网卡 IP 移到后面（10.x.x.x, 172.16-31.x.x）
+    virtual_ips = []
+    real_ips = []
+    for ip in ips:
+        if ip.startswith('10.') or ip.startswith('172.'):
+            # 检查是否是 172.16-31 段
+            if ip.startswith('172.'):
+                parts = ip.split('.')
+                if len(parts) >= 2 and 16 <= int(parts[1]) <= 31:
+                    virtual_ips.append(ip)
+                else:
+                    real_ips.append(ip)
+            else:
+                virtual_ips.append(ip)
+        else:
+            real_ips.append(ip)
+
+    # 重新组合：真实 IP 在前，虚拟 IP 在后
+    ips = real_ips + virtual_ips
+
     # 在最前面添加 0.0.0.0（监听所有网卡）
     ips.insert(0, '0.0.0.0 (所有网卡)')
 
