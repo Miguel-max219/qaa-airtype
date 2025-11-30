@@ -11,6 +11,8 @@ import logging
 import qrcode
 from PIL import Image, ImageTk
 import io
+import pystray
+from pystray import MenuItem as item
 
 # --- Flask 应用配置 ---
 app = Flask(__name__)
@@ -275,10 +277,17 @@ def get_all_ips():
 class ServerApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("无线输入板")
+        self.root.title("QAA AirType")
         # 增加高度以容纳二维码
         self.root.geometry("380x500")
         self.root.resizable(False, False)
+
+        # 绑定窗口关闭事件
+        self.root.protocol('WM_DELETE_WINDOW', self.hide_window)
+
+        # 系统托盘图标
+        self.tray_icon = None
+        self.create_tray_icon()
         
         # 居中屏幕
         screen_width = self.root.winfo_screenwidth()
@@ -373,7 +382,7 @@ class ServerApp:
     def toggle_server(self):
         if self.is_running:
             # 停止服务并退出
-            self.root.quit()
+            self.quit_app()
             return
 
         port_str = self.port_var.get()
@@ -446,6 +455,39 @@ class ServerApp:
             self.current_url = url
             self.tip_label.config(text="提示：如无法访问，请切换 IP 或端口重新扫码")
             self.tip_label.config(text="提示：如无法访问，请切换 IP 重新扫码")
+
+    def create_tray_icon(self):
+        """创建系统托盘图标"""
+        # 创建一个简单的图标
+        icon_image = Image.new('RGB', (64, 64), color='#007AFF')
+
+        # 创建托盘菜单
+        menu = pystray.Menu(
+            item('显示窗口', self.show_window),
+            item('退出', self.quit_app)
+        )
+
+        # 创建托盘图标
+        self.tray_icon = pystray.Icon("QAA-AirType", icon_image, "QAA AirType", menu)
+
+        # 在后台线程运行托盘图标
+        threading.Thread(target=self.tray_icon.run, daemon=True).start()
+
+    def hide_window(self):
+        """隐藏窗口到系统托盘"""
+        self.root.withdraw()
+
+    def show_window(self, icon=None, item=None):
+        """显示窗口"""
+        self.root.deiconify()
+        self.root.lift()
+        self.root.focus_force()
+
+    def quit_app(self, icon=None, item=None):
+        """退出应用"""
+        if self.tray_icon:
+            self.tray_icon.stop()
+        self.root.quit()
 
     def open_browser(self, event):
         if hasattr(self, 'current_url'):

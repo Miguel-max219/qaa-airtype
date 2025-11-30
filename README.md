@@ -53,7 +53,7 @@ git clone https://github.com/QAA-Tools/qaa-airtype.git
 cd qaa-airtype
 
 # 安装依赖
-pip install flask pyautogui pyperclip qrcode pillow
+pip install flask pyautogui pyperclip qrcode pillow pystray
 
 # 运行程序
 python src/remote_server.py
@@ -82,7 +82,7 @@ powershell -ExecutionPolicy Bypass -File build.ps1
 
 #### 技术栈
 
-Flask · Tkinter · PyAutoGUI · Pyperclip · QRCode · Pillow
+Flask · Tkinter · PyAutoGUI · Pyperclip · QRCode · Pillow · Pystray
 
 ## 🙏 致谢
 

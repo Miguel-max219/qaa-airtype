@@ -17,7 +17,7 @@ if (Test-Path "$env:USERPROFILE\miniconda3\shell\condabin\conda-hook.ps1") {
 
 # 检查依赖
 Write-Host "[2/4] 检查依赖..." -ForegroundColor Yellow
-$dependencies = @("flask", "pyautogui", "pyperclip", "qrcode", "pillow", "pyinstaller")
+$dependencies = @("flask", "pyautogui", "pyperclip", "qrcode", "pillow", "pystray", "pyinstaller")
 foreach ($dep in $dependencies) {
     $installed = python -c "import $dep" 2>$null
     if ($LASTEXITCODE -ne 0) {
