@@ -1,5 +1,10 @@
 # QAA AirType - 无线语音输入工具
 
+![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-Windows-blue?logo=windows&logoColor=white)
+![Stars](https://img.shields.io/github/stars/QAA-Tools/qaa-airtype?style=flat&logo=github)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 <div align="center">
 
 ![Demo](demo.png)
