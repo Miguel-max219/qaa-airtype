@@ -31,8 +31,8 @@ foreach ($dep in $dependencies) {
 
 # 生成图标
 Write-Host "[3/4] 生成应用图标..." -ForegroundColor Yellow
-if (Test-Path "generate_icon.py") {
-    python generate_icon.py
+if (Test-Path "src\generate_icon.py") {
+    python src\generate_icon.py
     if (Test-Path "icon.ico") {
         Write-Host "  ✓ 图标生成成功" -ForegroundColor Green
     } else {
@@ -53,7 +53,7 @@ if (Test-Path "icon.ico") {
 }
 
 # 执行 PyInstaller
-$buildCommand = "pyinstaller --onefile --windowed --name=QAA-AirType $iconParam remote_server.py"
+$buildCommand = "pyinstaller --onefile --windowed --name=QAA-AirType $iconParam src\remote_server.py"
 Write-Host "  执行命令: $buildCommand" -ForegroundColor Cyan
 Invoke-Expression $buildCommand
 
