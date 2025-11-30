@@ -1,0 +1,48 @@
+[project]
+name = "qaa-airtype"
+version = "1.0.0"
+description = "通过手机端语音输入实现电脑端远程输入的工具"
+authors = [
+    {name = "QAA-Tools"}
+]
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+keywords = ["remote-input", "voice-typing", "wireless-keyboard"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "flask>=3.0.0",
+    "pyautogui>=0.9.54",
+    "pyperclip>=1.8.2",
+    "qrcode>=7.4.2",
+    "pillow>=10.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pyinstaller>=6.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/QAA-Tools/qaa-airtype"
+Repository = "https://github.com/QAA-Tools/qaa-airtype"
+Issues = "https://github.com/QAA-Tools/qaa-airtype/issues"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["."]
