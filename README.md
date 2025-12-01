@@ -40,7 +40,7 @@ QAA AirType 是一个轻量级的局域网输入板，让你可以通过手机�
 
 ### 普通用户
 
-1. 下载 `QAA-AirType.exe`
+1. 下载 [`QAA-AirType.exe`](https://github.com/QAA-Tools/qaa-airtype/releases/download/0.0.1/QAA-AirType.exe)
 2. 双击运行，点击"启动服务并生成二维码"
 3. 手机扫描二维码（确保同一 WiFi）
 4. 在手机网页使用语音输入，点击发送
